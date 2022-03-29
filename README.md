@@ -14,6 +14,6 @@ To run the project locally:
 - After installing the package.json, start the frontend by typing `npm start` in the frontend terminal
 
 ## Testing
-The coverage report for the backend can be found in the following directory: `app/server/` 
-Below a picture from the coverage report:
+- The coverage report (`htmlcov`) for the backend can be found in the following directory: `app/server/` 
+- Below a picture from the coverage report:
 ![coverage](https://user-images.githubusercontent.com/71641010/160633037-1775702a-8728-4535-b873-212267fd7542.png)
