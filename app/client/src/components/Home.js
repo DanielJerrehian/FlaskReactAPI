@@ -9,7 +9,7 @@ import PostForm from './PostForm'
 
 function Home() {
     const [data, setData] = useState([{}])
-    const [formData, setFormData] = useState({name: "", age: "", favoriteColor: "" })
+    const [formData, setFormData] = useState({name: "", age: "", favoriteColor: ""})
 
     useEffect(() => {
         axios

@@ -3,13 +3,13 @@ import React from "react"
 function About() {
     return (
         <div>
-            <h1>A little bit about me...</h1>
+            <h1>A little bit about the project... and more:</h1>
             <ul>
-                <li className="data">Born in Atlanta, Georgia</li>
-                <li className="data">Graduated from Penn State</li>
-                <li className="data">Currently living in Germany</li>
-                <li className="data">Hobbies include producing music, playing piano, coding, and working out</li>
-                <li className="data">Favorite sports team is the Philadelphia Eagles</li>
+                <li className="data">Frontend made with React.js</li>
+                <li className="data">NPM packages used include: axios, react-router-dom</li>
+                <li className="data">Backend made with Python Flask</li>
+                <li className="data">100% Python test coverage</li>
+                <li className="data">WorkBee seems like a really cool place to work!</li>
             </ul>
         </div>
     )
