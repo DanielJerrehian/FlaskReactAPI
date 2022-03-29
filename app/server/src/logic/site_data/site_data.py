@@ -1,5 +1,4 @@
-from src.app import db
-from src.models.models import User
+from src.models.models import db, User
 
 
 class SiteData():
