@@ -1,11 +1,17 @@
 import unittest
+import sys
+import os
 
-from src.app import create_app
-from src.models.models import db, User
+sys.path.append(os.path.join("app", "server"))
+
+from app.server.src.app import create_app
+from app.server.src.models.models import db, User
+
 
 
 class TestIndex(unittest.TestCase):
     def setUp(self):
+        
         self.app = create_app()
         self.app.testing = True
         self.client = self.app.test_client()
@@ -22,7 +28,7 @@ class TestIndex(unittest.TestCase):
         with self.app.test_client() as client:
             response = client.get("/user-count")
             data = response.get_json()
-            self.assertEqual(data["userCount"], 13)
+            self.assertEqual(data["userCount"], 14)
             self.assertEqual(response.status_code, 200)
             
     def test_get_top_color(self):
@@ -37,7 +43,7 @@ class TestIndex(unittest.TestCase):
             response = client.get("/site-data")
             data = response.get_json()
             self.assertEqual(data["projectName"], "FlaskReactAPI")
-            self.assertEqual(data["userCount"], 13)
+            self.assertEqual(data["userCount"], 14)
             self.assertEqual(data["topFavoriteColor"], "Purple")
             self.assertEqual(response.status_code, 200)
             
@@ -48,7 +54,7 @@ class TestIndex(unittest.TestCase):
             written_user = User.query.filter(User.name == self.name).first()
             self.assertEqual(written_user.age, self.age)
             self.assertEqual(data["projectName"], "FlaskReactAPI")
-            self.assertEqual(data["userCount"], 14)
+            self.assertEqual(data["userCount"], 15)
             self.assertEqual(data["topFavoriteColor"], "Purple")
             
     def tearDown(self):

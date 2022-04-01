@@ -1,7 +1,11 @@
-import unittest 
+import unittest
+import sys
+import os
 
-from src.app import create_app
-from src.logic.site_data.site_data import SiteData
+sys.path.append(os.path.join("app", "server"))
+
+from app.server.src.app import create_app
+from app.server.src.logic.site_data.site_data import SiteData
 
 
 class TestSiteData(unittest.TestCase):
@@ -21,7 +25,7 @@ class TestSiteData(unittest.TestCase):
         with self.app.app_context():
             site_data = SiteData()
             site_data.count_user()
-            self.assertEqual(site_data.user_count, 13)
+            self.assertEqual(site_data.user_count, 14)
             
     def test_get_favorite_color(self):
         with self.app.app_context():

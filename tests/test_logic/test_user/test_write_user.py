@@ -1,8 +1,12 @@
 import unittest 
+import sys
+import os
 
-from src.app import create_app
-from src.models.models import db, User
-from src.logic.user.write_user import WriteUser
+sys.path.append(os.path.join("app", "server"))
+
+from app.server.src.app import create_app
+from app.server.src.models.models import db, User
+from app.server.src.logic.user.write_user import WriteUser
 
 
 
