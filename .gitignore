@@ -7,5 +7,6 @@
 # Cache
 __pycache__
 
-# Coverage
+# Tests
 .coverage
+htmlcov

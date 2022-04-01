@@ -1,7 +1,10 @@
-import unittest 
+import unittest
+import sys
+import os
 
-from src.app import create_app
-from src.logic.request.prepare_request import prepare_request
+sys.path.append(os.path.join("app", "server"))
+
+from app.server.src.logic.request.prepare_request import prepare_request
 
 class TestPrepareRequest(unittest.TestCase):
     def setUp(self):
