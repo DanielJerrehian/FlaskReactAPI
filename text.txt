@@ -1,0 +1,80 @@
+import React from "react"
+import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
+import {NavLink} from "react-router-dom";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+
+
+
+
+function Navbar() {
+    return (
+        <AppBar color="secondary" position="static">
+            <Container maxWidth="xl">
+                <Toolbar>
+                    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorElNav}
+                    anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "left"
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                        vertical: "top",
+                        horizontal: "left"
+                    }}
+                    open={Boolean(anchorElNav)}
+                    onClose={handleCloseNavMenu}
+                    sx={{
+                        display: { xs: "block", md: "none" }
+                    }}
+                    >
+                    {pages.map((page) => (
+                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page}</Typography>
+                        </MenuItem>
+                    ))}
+                </Menu>
+            </Box>
+                    
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                        <MenuItem>
+                            <NavLink to="/" className="navbar-link">Home</NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <NavLink to="/about" className="navbar-link">About</NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <NavLink to="/users" className="navbar-link">Users</NavLink>
+                        </MenuItem>
+                        <MenuItem>
+                            <NavLink to="/color" className="navbar-link">Top Color</NavLink>
+                        </MenuItem>
+                    </Box> */}
+                </Toolbar>
+            </Container>
+        </AppBar>
+    )
+}
+
+export default Navbar

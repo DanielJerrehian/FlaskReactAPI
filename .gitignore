@@ -6,6 +6,3 @@
 
 # Cache
 __pycache__
-
-# Coverage
-.coverage
