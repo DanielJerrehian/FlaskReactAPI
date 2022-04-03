@@ -2,9 +2,7 @@ import unittest
 import sys
 import os
 
-sys.path.append(os.path.join("app", "server"))
-
-from app.server.src.logic.request.prepare_request import prepare_request
+from src.logic.request.prepare_request import prepare_request
 
 class TestPrepareRequest(unittest.TestCase):
     def setUp(self):

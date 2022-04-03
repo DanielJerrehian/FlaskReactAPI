@@ -1,11 +1,7 @@
 import unittest
-import sys
-import os
 
-sys.path.append(os.path.join("app", "server"))
-
-from app.server.src.app import create_app
-from app.server.src.logic.site_data.site_data import SiteData
+from src.app import create_app
+from src.logic.site_data.site_data import SiteData
 
 
 class TestSiteData(unittest.TestCase):

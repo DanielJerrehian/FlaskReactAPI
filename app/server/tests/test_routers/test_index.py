@@ -1,17 +1,11 @@
 import unittest
-import sys
-import os
 
-sys.path.append(os.path.join("app", "server"))
-
-from app.server.src.app import create_app
-from app.server.src.models.models import db, User
-
+from src.app import create_app
+from src.models.models import db, User
 
 
 class TestIndex(unittest.TestCase):
     def setUp(self):
-        
         self.app = create_app()
         self.app.testing = True
         self.client = self.app.test_client()
