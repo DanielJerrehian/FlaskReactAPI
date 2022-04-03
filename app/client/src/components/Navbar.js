@@ -7,7 +7,6 @@ import MenuItem from "@mui/material/MenuItem";
 import {NavLink} from "react-router-dom";
 
 
-
 function Navbar() {
     return (
         <AppBar color="secondary" position="static">

@@ -10,6 +10,7 @@ import PostForm from './PostForm'
 function Home() {
     const [data, setData] = useState([{}])
     const [formData, setFormData] = useState({name: "", age: "", favoriteColor: ""})
+    const colorOptions = ["Black", "White", "Red", "Green", "Yellow", "Blue", "Pink", "Gray", "Brown", "Orange", "Purple"]
 
     useEffect(() => {
         axios
@@ -37,13 +38,14 @@ function Home() {
                 [name]: value
             }
         })
+        console.log(formData)
     }
 
     return (
         <div>
             <Welcome />
             {(typeof data.userCount != "undefined") ? <SiteData data={data} /> : (<LoadingData />)}
-            <PostForm handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} />
+            <PostForm handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} colorOptions={colorOptions} />
         </div>
     )   
 }
