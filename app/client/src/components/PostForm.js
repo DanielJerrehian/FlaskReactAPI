@@ -20,50 +20,60 @@ function PostForm(props) {
             <div className="form">
                 <form onSubmit={props.handleSubmit} autoComplete="off">
                     <Box>
-                        <div className="form-input">
-                            <TextField
-                                label="Name"
-                                variant="outlined"
-                                color="secondary"
-                                fullWidth
-                                name="name"
-                                value={name}
+                        <TextField
+                            label="Name"
+                            variant="outlined"
+                            color="secondary"
+                            fullWidth
+                            name="name"
+                            value={name}
+                            onChange={props.handleChange}
+                            style={{
+                                marginBottom: "1rem"
+                            }}
+                        />
+                        <TextField
+                            label="Age"
+                            type="number"
+                            InputProps={{
+                                inputProps: {
+                                    min: 18, max: 99,
+                                }
+                            }}
+                            variant="outlined"
+                            color="secondary"
+                            fullWidth
+                            name="age"
+                            value={age}
+                            onChange={props.handleChange}
+                            style={{
+                                marginBottom: "1rem"
+                            }}
+                        />
+                        <FormControl
+                            fullWidth
+                            required
+                            color="secondary"
+                            style={{
+                                marginBottom: "1rem"
+                            }}
+                        >
+                            <InputLabel id="color-select-label">Favorite Color</InputLabel>
+                            <Select
+                                labelId="color-select-label"
+                                id="color-select"
+                                label="Favorite Color"
+                                name="favoriteColor"
+                                value={favoriteColor}
                                 onChange={props.handleChange}
-                            />
-                        </div>
-                        <div className="form-input">
-                            <TextField
-                                label="Age"
-                                type="number"
-                                InputProps={{
-                                    inputProps: { 
-                                        min: 18, max: 99, 
-                                    }
+                                style={{
+                                    minWidth: "100px"
                                 }}
-                                variant="outlined"
-                                color="secondary"
-                                fullWidth
-                                name="age"
-                                value={age}
-                                onChange={props.handleChange}
-                            />
-                        </div>
-                        <div className="form-input">
-                            <FormControl fullWidth required color="secondary">
-                                <InputLabel id="color-select-label">Favorite Color</InputLabel>
-                                <Select
-                                    labelId="color-select-label"
-                                    id="color-select"
-                                    label="Favorite Color"
-                                    name="favoriteColor"
-                                    value={favoriteColor}
-                                    onChange={props.handleChange}
-                                    MenuProps={{ style: { maxHeight: 200 } }}
-                                >
-                                    {colorMenuItems}
-                                </Select>
-                            </FormControl>
-                        </div>
+                                MenuProps={{ style: { maxHeight: 200 } }}
+                            >
+                                {colorMenuItems}
+                            </Select>
+                        </FormControl>
                         <Button type="submit" variant="contained" color="secondary" size="large">Submit</Button>
                     </Box>
                 </form>

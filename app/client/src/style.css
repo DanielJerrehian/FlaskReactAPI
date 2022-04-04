@@ -6,26 +6,12 @@ body {
     margin: 0;
 }
 
-.navbar {
-    font-family: 'Roboto', sans-serif;
-    color: black;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    margin-top: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: lightcoral;
-    height: 4.5rem;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
-    z-index: 1;
-}
-
 .navbar-link {
-    color: black;
+    font-family: 'Roboto', sans-serif;
+    color: white;
     padding-left: 2rem;
     padding-right: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -65,6 +51,6 @@ form {
     display: inline-block;
 }
 
-.form-input {
-    margin-bottom: 2rem;
+.pointer {  
+    cursor: pointer;
 }
