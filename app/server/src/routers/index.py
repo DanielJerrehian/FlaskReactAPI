@@ -1,4 +1,4 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 
 from src.logic.user.write_user import WriteUser
 from src.logic.site_data.site_data import SiteData
@@ -8,11 +8,17 @@ from src.logic.request.prepare_request import prepare_request
 
 main = Blueprint("main", __name__)
 
-@main.get("/user-count")
+@main.get("/user-data")
 def user_count():
     site_data = SiteData()
     site_data.count_user()
-    return {"userCount": site_data.user_count}, 200
+    site_data.average_user_age()
+    site_data.fetch_last_three_users()
+    return {
+        "userCount": site_data.user_count,
+        "averageAge": round(site_data.average_age, 0),
+        "lastThreeUsers": site_data.last_three_users
+    }, 200
 
 @main.get("/top-color")
 def top_color():
