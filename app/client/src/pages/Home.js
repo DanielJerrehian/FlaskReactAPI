@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
 
-import Welcome from './Welcome'
-import SiteData from './SiteData'
-import LoadingData from './LoadingData'
-import PostForm from './PostForm'
+import Welcome from '../components/Welcome'
+import SiteData from '../components/SiteData'
+import LoadingData from '../components/LoadingData'
+import PostForm from '../components/PostForm'
 
 
 function Home() {

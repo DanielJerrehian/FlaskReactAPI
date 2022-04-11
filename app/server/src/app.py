@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 
 from src.models.db import db
+from src.models.marshmallow import ma
 from src.routers.index import main
 
 
@@ -19,7 +20,7 @@ def create_app():
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     db.init_app(app)
-    ma = Marshmallow(app)
+    ma.init_app(app)
     
     app.register_blueprint(main)
 

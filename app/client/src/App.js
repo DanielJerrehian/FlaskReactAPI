@@ -2,10 +2,10 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from './components/Navbar';
-import Home from './components/Home'
-import About from './components/About';
-import Users from './components/Users';
-import Color from './components/Color';
+import Home from './pages/Home'
+import About from './pages/About';
+import Users from './pages/Users';
+import Color from './pages/Color';
 import Error from './components/Error';
 import './style.css'
 

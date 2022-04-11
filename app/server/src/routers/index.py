@@ -3,6 +3,7 @@ from flask import Blueprint, request, jsonify
 from src.logic.user.write_user import WriteUser
 from src.logic.site_data.site_data import SiteData
 from src.models.pydantic_models import User
+from src.models.models import UserSchema
 from src.logic.request.prepare_request import prepare_request
 
 
@@ -17,14 +18,18 @@ def user_count():
     return {
         "userCount": site_data.user_count,
         "averageAge": round(site_data.average_age, 0),
-        "lastThreeUsers": site_data.last_three_users
+        "lastThreeUsers": UserSchema().dump(site_data.last_three_users, many=True)
     }, 200
 
-@main.get("/top-color")
+@main.get("/color-data")
 def top_color():
     site_data = SiteData()
     site_data.get_favorite_color()
-    return {"topFavoriteColor": site_data.favorite_color}, 200
+    site_data.get_second_favorite_color()
+    return {
+        "topFavoriteColor": site_data.favorite_color,
+        "secondFavoriteColor": site_data.second_favorite_color
+    }, 200
 
 @main.get("/site-data")
 def site_data():
