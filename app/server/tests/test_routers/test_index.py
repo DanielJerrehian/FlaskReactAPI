@@ -25,7 +25,6 @@ class TestIndex(unittest.TestCase):
             self.assertEqual(data["userCount"], 14)
             self.assertEqual(round(data["averageAge"], 0), 28)
             self.assertEqual(data["lastThreeUsers"][0]["name"], "Ruben")
-            
             self.assertEqual(response.status_code, 200)
             
     def test_get_top_color(self):
