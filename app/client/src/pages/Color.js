@@ -21,10 +21,10 @@ function Color() {
                     (
                         <div>
                             <h1>Top Colors</h1>
-                            <h3>According to our survey...</h3>
+                            <h3>According to our survey... our users:</h3>
                             <ul>
-                                <li className="data">Our users favorite color is {data.topFavoriteColor}</li>
-                                <li className="data">Their second favorite color is {data.secondFavoriteColor}</li>
+                                <li className="data">Favorite color is {data.topFavoriteColor}</li>
+                                <li className="data">Second favorite color is {data.secondFavoriteColor}</li>
                             </ul>
                         </div>                 
                     )

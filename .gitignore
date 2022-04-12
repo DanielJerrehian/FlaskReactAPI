@@ -10,3 +10,6 @@ __pycache__
 # Tests
 .coverage
 htmlcov
+
+# VS Code
+.vscode
