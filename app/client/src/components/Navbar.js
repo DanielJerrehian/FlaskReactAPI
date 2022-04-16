@@ -17,26 +17,17 @@ function Navbar() {
             <Container maxWidth="none">
                 <Toolbar>
                     <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                        <MenuItem
-                            autoFocus
-                            style={{ color: "white" }}
-                        >
+                        <MenuItem>
                             <NavLink to="/" className="navbar-link">Home</NavLink>
                         </MenuItem>
-                        <MenuItem
-                            autoFocus
-                        >
+                        <MenuItem>
                             <NavLink to="/about" className="navbar-link">About</NavLink>
                         </MenuItem>
-                        <MenuItem
-                            autoFocus
-                        >
+                        <MenuItem>
                             <NavLink to="/users" className="navbar-link">Users</NavLink>
                         </MenuItem>
-                        <MenuItem
-                            autoFocus
-                        >
-                            <NavLink to="/color" className="navbar-link">Top Color</NavLink>
+                        <MenuItem>
+                            <NavLink to="/color" className="navbar-link">Top Colors</NavLink>
                         </MenuItem>
                     </Box>
                     <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

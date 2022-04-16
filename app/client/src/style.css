@@ -24,7 +24,7 @@ body {
 }
 
 .data {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .line {
@@ -53,4 +53,8 @@ form {
 
 .pointer {  
     cursor: pointer;
+}
+
+.italics {
+    font-style: italic;
 }

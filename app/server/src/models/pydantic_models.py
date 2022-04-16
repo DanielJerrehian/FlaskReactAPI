@@ -1,7 +1,11 @@
 from pydantic import BaseModel
+from typing import Optional
 
 
-class User(BaseModel):
+class UserValidationSchema(BaseModel):
     name: str
-    age: int = None
+    age: Optional[int] = None
     favorite_color: str = None
+    
+    class Config:
+        orm_mode = True
