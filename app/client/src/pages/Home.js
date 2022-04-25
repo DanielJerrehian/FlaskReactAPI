@@ -38,7 +38,6 @@ function Home() {
                 [name]: value
             }
         })
-        console.log(formData)
     }
 
     return (
