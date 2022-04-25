@@ -13,14 +13,3 @@ class UserSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = User
         load_instance = True
-
-
-# class Color(db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     color = db.column(db.String(60), nullable=False)
-
-
-# class ColorSchema(ma.SQLAlchemyAutoSchema):
-#     class Meta:
-#         model = Color
-#         load_instance = True

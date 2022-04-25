@@ -1,7 +1,7 @@
-from sqlalchemy import desc, func
+from sqlalchemy import func
 
 from src.models.models import db, User
-from src.logic.model_to_json.row_to_dict import row_to_dict
+
 
 class SiteData():
     def __init__(self):

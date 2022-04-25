@@ -4,7 +4,7 @@ from src.logic.user.write_user import WriteUser
 from src.logic.site_data.site_data import SiteData
 from src.models.pydantic_models import UserValidationSchema
 from src.models.models import UserSchema
-from src.logic.request.prepare_request import prepare_request
+from src.logic.request.decorator import validate_request_body
 
 
 main = Blueprint("main", __name__)
@@ -48,8 +48,9 @@ def site_data():
 
 
 @main.post("/user-data")
+@validate_request_body
 def user_data():
-    req = prepare_request(request.json)  # make decorator in future
+    req = request.json
     user_model = UserValidationSchema(name=req["name"], age=req["age"], favorite_color=req["favoriteColor"])
     write_user = WriteUser(name=user_model.name, age=user_model.age, favorite_color=user_model.favorite_color)
     write_user.write_user()

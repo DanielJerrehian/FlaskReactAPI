@@ -1,8 +1,7 @@
 import unittest
-import sys
-import os
 
-from src.logic.request.prepare_request import prepare_request
+from src.logic.request.replace_empty_strings_with_none import replace_empty_strings_with_none
+
 
 class TestPrepareRequest(unittest.TestCase):
     def setUp(self):
@@ -18,10 +17,10 @@ class TestPrepareRequest(unittest.TestCase):
         }
     
     def test_func_exists(self):
-        self.assertTrue(prepare_request)
+        self.assertTrue(replace_empty_strings_with_none)
         
     def test_func_no_empty_string_vals(self):
-        req = prepare_request(self.request_no_empty_string_vals)
+        req = replace_empty_strings_with_none(self.request_no_empty_string_vals)
         self.assertEqual(
             req, 
             {
@@ -32,7 +31,7 @@ class TestPrepareRequest(unittest.TestCase):
         )
         
     def test_func_with_empty_string_vals(self):
-        req = prepare_request(self.request_with_empty_string_vals)
+        req = replace_empty_strings_with_none(self.request_with_empty_string_vals)
         self.assertEqual(
             req, 
             {

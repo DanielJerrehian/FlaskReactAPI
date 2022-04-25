@@ -15,7 +15,7 @@ def create_app():
     app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
     app.config["ENV"] = "development"
     app.config["DEBUG"] = True
-    app.config['CORS_HEADERS'] = 'Content-Type'
+    app.config["CORS_HEADERS"] = "Content-Type"
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///models/database.db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
