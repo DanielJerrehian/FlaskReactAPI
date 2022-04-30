@@ -1,4 +1,5 @@
 from flask import Blueprint, request
+from time import sleep
 
 from src.logic.user.write_user import WriteUser
 from src.logic.site_data.site_data import SiteData
@@ -12,6 +13,7 @@ main = Blueprint("main", __name__)
 
 @main.get("/user-data")
 def user_count():
+    sleep(.5)
     site_data = SiteData()
     site_data.count_user()
     site_data.average_user_age()
@@ -25,6 +27,7 @@ def user_count():
 
 @main.get("/color-data")
 def top_color():
+    sleep(.5)
     site_data = SiteData()
     site_data.get_favorite_color()
     site_data.get_second_favorite_color()
@@ -36,6 +39,7 @@ def top_color():
 
 @main.get("/site-data")
 def site_data():
+    sleep(.5)
     site_data = SiteData()
     site_data.get_project_name()
     site_data.count_user()
@@ -50,6 +54,7 @@ def site_data():
 @main.post("/user-data")
 @validate_request_body
 def user_data():
+    sleep(.5)
     req = request.json
     user_model = UserValidationSchema(name=req["name"], age=req["age"], favorite_color=req["favoriteColor"])
     write_user = WriteUser(name=user_model.name, age=user_model.age, favorite_color=user_model.favorite_color)

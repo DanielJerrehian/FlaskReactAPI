@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 
-function LoadingData() {
+function LoadingData(props) {
+    const { loading } = props
     return (
-        <div className="loading-data">
-            <p>Loading data...</p>
-        </div>
+        <ClipLoader color="black" loading={loading} size={75} />
     )
 }
 
