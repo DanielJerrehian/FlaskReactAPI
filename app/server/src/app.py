@@ -2,10 +2,11 @@ from flask import Flask
 from dotenv import load_dotenv
 import os
 
-from src.network.cors import cors
-from src.models.db import db
-from src.models.marshmallow import ma
-from src.routers.index import main
+from server.src.network.cors import cors
+from server.src.models.db import db
+from server.src.models.migrate import migrate
+from server.src.models.marshmallow import ma
+from server.src.routers.index import main
 
 
 def create_app():
@@ -21,6 +22,7 @@ def create_app():
 
     cors.init_app(app)
     db.init_app(app)
+    migrate.init_app(app, db, render_as_batch=True) # render_as_batch because using SQLite (https://www.youtube.com/watch?v=wpRVZFwsD70)
     ma.init_app(app)
     
     app.register_blueprint(main)

@@ -1,5 +1,5 @@
-from src.models.db import db
-from src.models.marshmallow import ma
+from server.src.models.db import db
+from server.src.models.marshmallow import ma
 
 
 class User(db.Model):

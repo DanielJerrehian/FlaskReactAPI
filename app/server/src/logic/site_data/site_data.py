@@ -1,6 +1,6 @@
 from sqlalchemy import func
 
-from src.models.models import db, User
+from server.src.models.models import db, User
 
 
 class SiteData():
