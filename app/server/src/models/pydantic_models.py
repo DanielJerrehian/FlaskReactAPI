@@ -3,7 +3,7 @@ from typing import Optional
 
 
 class UserValidationSchema(BaseModel):
-    name: str
+    name: Optional[str]
     age: Optional[int] = None
     favorite_color: str = None
     

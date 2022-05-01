@@ -10,13 +10,17 @@ import PostForm from '../components/PostForm'
 function Home() {
     const [data, setData] = useState([{}])
     const [formData, setFormData] = useState({name: "", age: "", favoriteColor: ""})
+    const [isLoading, setIsLoading] = useState(false)
     const colorOptions = ["Black", "White", "Red", "Green", "Yellow", "Blue", "Pink", "Gray", "Brown", "Orange", "Purple"]
 
+
     useEffect(() => {
+        setIsLoading(true);
         axios
             .get("/site-data")
             .then(response => {
                 setData(response.data)
+                setIsLoading(false);
             })
     }, [])
 
@@ -43,7 +47,7 @@ function Home() {
     return (
         <div>
             <Welcome />
-            {(typeof data.userCount != "undefined") ? <SiteData data={data} /> : (<LoadingData />)}
+            {(typeof data.userCount != "undefined") ? <SiteData data={data} /> : (<LoadingData loading={isLoading} />)}
             <PostForm handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} colorOptions={colorOptions} />
         </div>
     )   
