@@ -6,6 +6,7 @@ from server.src.models.models import User, Gender
 class GenderSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Gender
+        fields = ["gender"]
         load_instance = True
         
 
