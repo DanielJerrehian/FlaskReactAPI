@@ -4,7 +4,7 @@ from time import sleep
 from server.src.logic.user.write_user import WriteUser
 from server.src.logic.site_data.site_data import SiteData
 from server.src.models.pydantic_models import UserValidationSchema
-from server.src.models.models import UserSchema
+from server.src.models.marshmallow_models import UserSchema
 from server.src.decorators.validate_request_body import validate_request_body
 
 
