@@ -16,6 +16,7 @@ To run the project locally:
         - After installing the package.json, start the frontend by typing `npm start`
 
 ## Testing
-- The coverage report for the backend can be created by running the tests in the directory `app/server/` by typing `coverage run -m pytest -s`
+- The coverage report for the backend can be created by running the tests in the directory `app/server/` by typing `coverage run -m pytest`
 - Below a picture from the coverage report:
+
 
