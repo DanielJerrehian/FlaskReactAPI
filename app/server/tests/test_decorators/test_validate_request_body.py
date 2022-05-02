@@ -1,7 +1,7 @@
 import pytest
 import unittest
 
-from src.models.models import db, User
+from server.src.models.models import db, User
 
 
 @pytest.mark.usefixtures("app")

@@ -1,7 +1,7 @@
 import pytest
 import unittest
 
-from src.logic.site_data.site_data import SiteData
+from server.src.logic.site_data.site_data import SiteData
 
 
 @pytest.mark.usefixtures("app")

@@ -1,7 +1,7 @@
 import pytest
 import unittest
 
-from src.models.models import db, User
+from server.src.models.models import db, User
 
 @pytest.mark.usefixtures("app") # "bridge" the below unittest class with the function "app" in conftest.py, giving access to self.app and self.client inexplicitly
 class TestIndex(unittest.TestCase):

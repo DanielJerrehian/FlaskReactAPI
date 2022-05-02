@@ -1,6 +1,6 @@
 import pytest
 
-from src.app import create_app
+from server.src.app import create_app
 
 
 @pytest.fixture() # create pytest fixture for tests that require the app, app_context, or test_client

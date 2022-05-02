@@ -1,6 +1,6 @@
 import unittest
 
-from src.logic.request.replace_empty_strings_with_none import replace_empty_strings_with_none
+from server.src.logic.request.replace_empty_strings_with_none import replace_empty_strings_with_none
 
 
 class TestPrepareRequest(unittest.TestCase):

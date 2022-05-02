@@ -1,8 +1,8 @@
 import pytest
 import unittest 
 
-from src.models.models import db, User
-from src.logic.user.write_user import WriteUser
+from server.src.models.models import db, User
+from server.src.logic.user.write_user import WriteUser
 
 @pytest.mark.usefixtures("app")
 class TestSiteData(unittest.TestCase):
