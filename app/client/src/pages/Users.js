@@ -33,7 +33,7 @@ function Users() {
                             <h3>The last three users who filled out the survey were:</h3>
                             <ol>
                                 {data?.lastThreeUsers.map(user => (
-                                    <UserDetails user={user} />
+                                    <UserDetails user={user} key={user.id} />
                                 ))}
                             </ol>
                         </div>
