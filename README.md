@@ -18,5 +18,6 @@ To run the project locally:
 ## Testing
 - The coverage report for the backend can be created by running the tests in the directory `app/server/` by typing `coverage run -m pytest`
 - Below a picture from the coverage report:
+![image](https://user-images.githubusercontent.com/71641010/166213892-a5f5c5b5-0876-4d89-8a15-2b2802d14e14.png)
 
 
