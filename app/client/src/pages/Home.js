@@ -5,6 +5,7 @@ import Welcome from '../components/Welcome'
 import SiteData from '../components/SiteData'
 import LoadingData from '../components/LoadingData'
 import PostForm from '../components/PostForm'
+import Error from '../components/Error';
 
 
 function Home() {
@@ -47,7 +48,17 @@ function Home() {
     return (
         <div>
             <Welcome />
-            {(typeof data.userCount != "undefined") ? <SiteData data={data} /> : (<LoadingData loading={isLoading} />)}
+            {
+                isLoading 
+                    ? 
+                        <LoadingData loading={isLoading} /> 
+                    :
+                        (typeof data?.userCount != "undefined")
+                            ? 
+                                <SiteData data={data} /> 
+                            : 
+                                <Error message="That didn't work, please try again" returnHome={false} />
+            }
             <PostForm handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} colorOptions={colorOptions} />
         </div>
     )   

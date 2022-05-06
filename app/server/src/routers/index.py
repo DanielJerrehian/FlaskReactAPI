@@ -21,7 +21,7 @@ def user_count():
     return {
         "userCount": site_data.user_count,
         "averageAge": round(site_data.average_age, 0),
-        "lastThreeUsers": UserSchema(exclude=["id"]).dump(site_data.last_three_users, many=True),
+        "lastThreeUsers": UserSchema().dump(site_data.last_three_users, many=True),
     }, 200
 
 

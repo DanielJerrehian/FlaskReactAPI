@@ -20,8 +20,6 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///models/database.db"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-    from server.src.models import models
-
     cors.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db, render_as_batch=True) # render_as_batch because using SQLite (https://www.youtube.com/watch?v=wpRVZFwsD70)

@@ -2,7 +2,7 @@ import React from 'react';
 
 function UserDetails(props) {
     const { user } = props
-    console.log(user?.gender?.gender)
+    
     return (
         <div style={{display: 'flex', flexDirection: 'row'}}>
             <li key={user.id} className="data">

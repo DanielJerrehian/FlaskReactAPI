@@ -19,7 +19,7 @@ function App() {
                     <Route path='/about' element={<About/>} />
                     <Route path='/users' element={<Users/>} />
                     <Route path='/color' element={<Color/>} />
-                    <Route path="*" element={<Error/>} />
+                    <Route path="*" element={<Error message="Oops, page not found" returnHome={true}/>} />
                 </Routes>
             </div>
         </main>
